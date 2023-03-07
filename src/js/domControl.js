@@ -1,4 +1,4 @@
-import { fetchAPI } from "./index.js";
+import { fetchAPI } from "../index.js";
 
 const city = document.querySelector("#search").value;
 const submit = document.querySelector("#submit");

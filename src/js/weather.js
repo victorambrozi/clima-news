@@ -1,7 +1,7 @@
 const API_KEY = "9f916719091d4adbb1c234509230703";
 
 export const fetchAPI = async (city) => {
-  const baseURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&aqi=no&alerts=no&lang=pt_br`;
+  const baseURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city === null ? 'Salvador': city}&days=7&aqi=no&alerts=no&lang=pt_br`;
   const response = await fetch(baseURL);
   const data = await response.json();
 

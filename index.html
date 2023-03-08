@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="header">
     <div class="header-content">
       <div class="header-content-top">
         <span class="header-content-notifications">Nofiticações</span>
@@ -51,17 +51,72 @@
             Chance de chuva
           </h3>
 
-          <div class="header-content-info-bottom-chart-container" >
+          <div class="header-content-info-bottom-chart-container">
             <canvas id="myChart"></canvas>
           </div>
         </div>
       </div>
     </div>
   </header>
-  <form action="">
-    <input type="text" name="search" id="search" required />
-    <input type="submit" name="submit" id="submit" />
-  </form>
+  <main class="main">
+    <form action="" class="main-form">
+      <div class="main-search-container">
+        <label for="search" name="search"></label>
+        <input type="text" name="search" id="search" placeholder= "Procurar cidades..." required />
+        <input type="submit" name="submit" id="submit" />
+      </div>
+      <span class="main-search-history">
+        Histórico
+        <ul class="main-search-history-items" style="display: none">
+          <li class="main-search-history-item"></li>
+        </ul>
+      </span>
+    </form>
+
+    <div class="main-forecast">
+      <h2 class="main-forecast-title">Previsão do <span>Tempo</span></h2>
+
+      <div class="main-places-card-container">
+        <div class="main-places-card">
+           <figure>
+            <img src="" alt="">
+           </figure>
+           <p class="main-places-card-location">São Paulo, Brasil</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-forecast-days">
+      <h3 class="main-forecast-days-title">Semana</h3>
+      <ul class="main-forecast-data-container">
+        <li class="main-forecast-data-item">
+          <span class="main-forecast-data-item-dayweek">Segunda</span>
+          <div class="main-forecast-data-item-chain-of-rain">
+            <figure>
+              <img src="" alt=""> <!-- icon-->
+            </figure>
+
+            <span>54%</span>
+          </div>
+
+          <div class="main-forecast-data-item-icon-situation-weather">
+            <figure>
+              <img src="" alt=""> <!--icon-->
+            </figure>
+          </div>
+
+          <div class="main-forecast-data-item-chart-dayweek">
+            <span>22°C</span> <!-- min-->
+            <div class="main-forecast-data-item-chart-temp">
+              <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
+            </div>
+            <span>40°C</span><!-- max-->
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module" src="../../src/js/domControl.js"></script>

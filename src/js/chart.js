@@ -42,7 +42,7 @@ export const controlChart = ({ forecastHour }) => {
         }
       },
       layout: {
-        padding: 40,
+        padding: 20,
       }
     },
     plugins: {

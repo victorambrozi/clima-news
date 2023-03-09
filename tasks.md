@@ -1,3 +1,17 @@
 ### Tarefas
-- [] write html and css
-- [] substituir conteúdo estático pelo dinâmico
+- [x]  FAZER REQUISIÇÃO PARA API
+    - [x] weather API
+- [x] ESCREVER HTML
+    - [x] CRIAR GRÁFICO PARA TEMPERATURA MÁXIMA OU MÍNIMA
+- [] ESCREVER CSS
+- [] SUBSTITUIR CONTEÚDO ESTÁTICO
+    - [] PREVISÃO DO DIA - LADO DIREITO
+    - [] PREVISÃO DOS DIAS DA SEMANA - LADO ESQUERDO
+    - [] PREVISÃO DO TEMPO - CARDS
+- [] RESPONSIVIDADE
+### Funcionalidades
+- [] HISTÓRICO DE PESQUISA
+- [] LUGARES MAIS PESQUISADOS
+
+### PRÓXIMAS FEATURES
+- [] ADICIONAR TELA DE LOGIN COM O GITHUB

@@ -9,6 +9,16 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="/styles/style.css" />
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GOOGLE FONTS -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -61,16 +71,21 @@
   <main class="main">
     <form action="" class="main-form">
       <div class="main-search-container">
-        <label for="search" name="search"></label>
-        <input type="text" name="search" id="search" placeholder= "Procurar cidades..." required />
-        <input type="submit" name="submit" id="submit" />
+        <label for="search" name="search">Pesquisa</label>
+        <input type="text" name="search" id="search" placeholder="Procurar cidades..." required />
+        <button type="submit" name="submit" id="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
-      <span class="main-search-history">
-        Histórico
-        <ul class="main-search-history-items" style="display: none">
-          <li class="main-search-history-item"></li>
+      <div class="main-search-history">
+        <span>Histórico</span>
+        <i class="fa-solid fa-angle-down"></i>
+        <ul class="main-search-history-items">
+          <li class="main-search-history-item">São Paulo</li>
+          <li class="main-search-history-item">Amaralina</li>
+          <li class="main-search-history-item">Rio Grande do Sul</li>
         </ul>
-      </span>
+      </div>
     </form>
 
     <div class="main-forecast">
@@ -78,10 +93,10 @@
 
       <div class="main-places-card-container">
         <div class="main-places-card">
-           <figure>
+          <figure>
             <img src="" alt="">
-           </figure>
-           <p class="main-places-card-location">São Paulo, Brasil</p>
+          </figure>
+          <p class="main-places-card-location">São Paulo, Brasil</p>
         </div>
       </div>
     </div>
@@ -108,6 +123,9 @@
           <div class="main-forecast-data-item-chart-dayweek">
             <span>22°C</span> <!-- min-->
             <div class="main-forecast-data-item-chart-temp">
+              <div class="main-forecast-data-item-chart">
+                <span class="main-forcast-data-item-chart-progress"></span>
+              </div>
               <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
             </div>
             <span>40°C</span><!-- max-->

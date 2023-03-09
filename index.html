@@ -15,10 +15,16 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- GOOGLE FONTS -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- SWIPER JS -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
 </head>
 
 <body>
@@ -69,39 +75,59 @@
     </div>
   </header>
   <main class="main">
-    <form action="" class="main-form">
-      <div class="main-search-container">
-        <label for="search" name="search">Pesquisa</label>
-        <input type="text" name="search" id="search" placeholder="Procurar cidades..." required />
-        <button type="submit" name="submit" id="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div>
-      <div class="main-search-history">
-        <span>Histórico</span>
-        <i class="fa-solid fa-angle-down"></i>
-        <ul class="main-search-history-items">
-          <li class="main-search-history-item">São Paulo</li>
-          <li class="main-search-history-item">Amaralina</li>
-          <li class="main-search-history-item">Rio Grande do Sul</li>
-        </ul>
-      </div>
-    </form>
+    <section>
+      <form action="" class="main-form">
+        <div class="main-search-container">
+          <label for="search" name="search">Pesquisa</label>
+          <input type="text" name="search" id="search" placeholder="Procurar cidades..." required />
+          <button type="submit" name="submit" id="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <div class="main-search-history">
+          <span>Histórico</span>
+          <i class="fa-solid fa-angle-down"></i>
+          <ul class="main-search-history-items">
+            <li class="main-search-history-item">São Paulo</li>
+            <li class="main-search-history-item">Amaralina</li>
+            <li class="main-search-history-item">Rio Grande do</li>
+          </ul>
+        </div>
+      </form>
+    </section>
 
-    <div class="main-forecast">
+    <section class="main-forecast">
       <h2 class="main-forecast-title">Previsão do <span>Tempo</span></h2>
 
+      <!-- SWIPER JS -->
       <div class="main-places-card-container">
-        <div class="main-places-card">
-          <figure>
-            <img src="" alt="">
-          </figure>
-          <p class="main-places-card-location">São Paulo, Brasil</p>
-        </div>
-      </div>
-    </div>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
 
-    <div class="main-forecast-days">
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="main-forecast-days">
       <h3 class="main-forecast-days-title">Semana</h3>
       <ul class="main-forecast-data-container">
         <li class="main-forecast-data-item">
@@ -110,10 +136,10 @@
             <figure>
               <img src="" alt=""> <!-- icon-->
             </figure>
-
+            
             <span>54%</span>
           </div>
-
+          
           <div class="main-forecast-data-item-icon-situation-weather">
             <figure>
               <img src="" alt=""> <!--icon-->
@@ -132,10 +158,11 @@
           </div>
         </li>
       </ul>
-    </div>
-
+    </section>
+    
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module" src="../../src/js/domControl.js"></script>
 </body>

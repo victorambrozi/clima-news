@@ -113,12 +113,6 @@
     font-weight: 900;
 }
 
-.main-places-card-container {
-    margin-top: 3.2rem;
-
-    display: flex;
-}
-
 .main-places-card {
     display: flex;
     justify-content: center;
@@ -128,10 +122,17 @@
 
 .main-places-card > figure {
     width: 100%;
-    max-width: 20rem;
-    border-radius: 10px;
 }
 
 .main-places-card > figure img {
     object-fit: contain;
+}
+
+.main-places-card > p {
+    margin: 1.6rem ;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 30px;
+    color: #312D63;
 }

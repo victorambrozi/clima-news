@@ -1,16 +1,31 @@
 .swiper {
     width: 100%;
+    max-width: 60%;
     padding: 50px 0;
+    margin-left: 0 !important;
 }
 
 .swiper-wrapper {
-  /* padding: 3.2rem; */
+  padding: 3.2rem 0;
 }
 
 .swiper-slide {
   width: 100%;
-  max-width: 200px;
+  max-width: 180px;
   cursor: pointer;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.swiper-pagination {
+  margin-top: 1.6rem;
+  --swiper-pagination-color: #E67757;
+  --swiper-pagination-progressbar-bg-color: #110E3C;
+  --swiper-pagination-progressbar-size: 2px;
 }
 
 .content {

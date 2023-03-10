@@ -1,203 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clima News</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/styles/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clima News</title>
 
-    <!-- FONT AWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- CSS -->
+  <link rel="stylesheet" href="/styles/style.css" />
 
-    <!-- SWIPER JS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-  </head>
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <body>
-    <header class="header">
-      <div class="header-content">
-        <div class="header-content-top">
-          <span class="header-content-notifications">Nofiticações</span>
-          <span class="header-content-places">Lugares</span>
+  <!-- SWIPER JS -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
 
-          <div class="header-avatar">
-            <figure><img src="" alt="" /></figure>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-content-top">
+        <span class="header-content-notifications">Nofiticações</span>
+        <span class="header-content-places">Lugares</span>
+
+        <div class="header-avatar">
+          <figure><img src="" alt="" /></figure>
+        </div>
+      </div>
+
+      <div class="header-content-info">
+        <div class="header-content-info-top">
+          <div class="header-content-info-top-icon">
+            <figure>
+              <img src="" alt="">
+            </figure>
+          </div>
+          <div class="header-content-info-top-content">
+            <h2 class="header-content-info-top-content__day">Hoje</h2>
+            <p class="header-content-info-top-content__date">Sab, <span>14 Fev</span></p>
           </div>
         </div>
 
-        <div class="header-content-info">
-          <div class="header-content-info-top">
-            <div class="header-content-info-top-icon">
-              <figure>
-                <img src="" alt="" />
-              </figure>
-            </div>
-            <div class="header-content-info-top-content">
-              <h2 class="header-content-info-top-content__day">Hoje</h2>
-              <p class="header-content-info-top-content__date">
-                Sab, <span>14 Fev</span>
-              </p>
-            </div>
+        <div class="header-content-info-center">
+          <p class="header-content-info-center-temp">28°C</p>
+          <span class="header-contetn-info-location">Salvador, BA</span>
+
+          <div class="header-content-info-center-data">
+            <p>Temperatura esperada - <span>32°C</span></p>
+            <p>Pôr do sol- <span>17:42h</span></p>
           </div>
+        </div>
 
-          <div class="header-content-info-center">
-            <p class="header-content-info-center-temp">28°C</p>
-            <span class="header-contetn-info-location">Salvador, BA</span>
+        <div class="header-content-info-bottom">
+          <h3 class="header-content-info-bottom-title">
+            Chance de chuva
+          </h3>
 
-            <div class="header-content-info-center-data">
-              <p>Temperatura esperada - <span>32°C</span></p>
-              <p>Pôr do sol- <span>17:42h</span></p>
-            </div>
-          </div>
-
-          <div class="header-content-info-bottom">
-            <h3 class="header-content-info-bottom-title">Chance de chuva</h3>
-
-            <div class="header-content-info-bottom-chart-container">
-              <canvas id="myChart"></canvas>
-            </div>
+          <div class="header-content-info-bottom-chart-container">
+            <canvas id="myChart"></canvas>
           </div>
         </div>
       </div>
-    </header>
-    <main class="main">
-      <section>
-        <form action="" class="main-form">
-          <div class="main-search-container">
-            <label for="search" name="search">Pesquisa</label>
-            <input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Procurar cidades..."
-              required
-            />
-            <button type="submit" name="submit" id="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div>
-          <div class="main-search-history">
-            <span>Histórico</span>
-            <i class="fa-solid fa-angle-down"></i>
-            <ul class="main-search-history-items">
-              <li class="main-search-history-item">São Paulo</li>
-              <li class="main-search-history-item">Amaralina</li>
-              <li class="main-search-history-item">Rio Grande do</li>
-            </ul>
-          </div>
-        </form>
-      </section>
-
-      <section class="main-forecast">
-        <h2 class="main-forecast-title">Previsão do <span>Tempo</span></h2>
-
-        <!-- SWIPER JS -->
-        <div class="main-places-card-container">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="main-places-card">
-                  <figure>
-                    <img src="https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="" />
-                  </figure>
-                  <p class="main-places-card-location">São Paulo, Brasil</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="main-places-card">
-                  <figure>
-                    <img src="https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="" />
-                  </figure>
-                  <p class="main-places-card-location">São Paulo, Brasil</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="main-places-card">
-                  <figure>
-                    <img src="https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="" />
-                  </figure>
-                  <p class="main-places-card-location">São Paulo, Brasil</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="main-places-card">
-                  <figure>
-                    <img src="https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="" />
-                  </figure>
-                  <p class="main-places-card-location">São Paulo, Brasil</p>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="main-places-card">
-                  <figure>
-                    <img src="https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" alt="" />
-                  </figure>
-                  <p class="main-places-card-location">São Paulo, Brasil</p>
-                </div>
-              </div>
-            </div>
-          </div>
+    </div>
+  </header>
+  <main class="main">
+    <section>
+      <form action="" class="main-form">
+        <div class="main-search-container">
+          <label for="search" name="search">Pesquisa</label>
+          <input type="text" name="search" id="search" placeholder="Procurar cidades..." required />
+          <button type="submit" name="submit" id="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
-      </section>
+        <div class="main-search-history">
+          <span>Histórico</span>
+          <i class="fa-solid fa-angle-down"></i>
+          <ul class="main-search-history-items">
+            <li class="main-search-history-item">São Paulo</li>
+            <li class="main-search-history-item">Amaralina</li>
+            <li class="main-search-history-item">Rio Grande do</li>
+          </ul>
+        </div>
+      </form>
+    </section>
 
-      <section class="main-forecast-days">
-        <h3 class="main-forecast-days-title">Semana</h3>
-        <ul class="main-forecast-data-container">
-          <li class="main-forecast-data-item">
-            <span class="main-forecast-data-item-dayweek">Segunda</span>
-            <div class="main-forecast-data-item-chain-of-rain">
-              <figure>
-                <img src="" alt="" />
-                <!-- icon-->
-              </figure>
+    <section class="main-forecast">
+      <h2 class="main-forecast-title">Previsão do <span>Tempo</span></h2>
 
-              <span>54%</span>
-            </div>
-
-            <div class="main-forecast-data-item-icon-situation-weather">
-              <figure>
-                <img src="" alt="" />
-                <!--icon-->
-              </figure>
-            </div>
-
-            <div class="main-forecast-data-item-chart-dayweek">
-              <span>22°C</span>
-              <!-- min-->
-              <div class="main-forecast-data-item-chart-temp">
-                <div class="main-forecast-data-item-chart">
-                  <span class="main-forcast-data-item-chart-progress"></span>
-                </div>
-                <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
+      <!-- SWIPER JS -->
+      
+      <div class="main-places-card-container">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
               </div>
-              <span>40°C</span
-              ><!-- max-->
             </div>
-          </li>
-        </ul>
-      </section>
-    </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="../../src/js/domControl.js"></script>
-  </body>
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="main-places-card">
+                <figure>
+                  <img src="https://images.unsplash.com/photo-1509299349698-dd22323b5963?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                </figure>
+                <p class="main-places-card-location">São Paulo, Brasil</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-pagination"></div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+
+    <section class="main-forecast-days">
+      <h3 class="main-forecast-days-title">Semana</h3>
+      <ul class="main-forecast-data-container">
+        <li class="main-forecast-data-item">
+          <span class="main-forecast-data-item-dayweek">Segunda</span>
+          <div class="main-forecast-data-item-chain-of-rain">
+            <figure>
+              <img src="" alt=""> <!-- icon-->
+            </figure>
+            
+            <span>54%</span>
+          </div>
+          
+          <div class="main-forecast-data-item-icon-situation-weather">
+            <figure>
+              <img src="" alt=""> <!--icon-->
+            </figure>
+          </div>
+
+          <div class="main-forecast-data-item-chart-dayweek">
+            <span>22°C</span> <!-- min-->
+            <div class="main-forecast-data-item-chart-temp">
+              <div class="main-forecast-data-item-chart">
+                <span class="main-forcast-data-item-chart-progress"></span>
+              </div>
+              <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
+            </div>
+            <span>40°C</span><!-- max-->
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="../../src/js/domControl.js"></script>
+</body>
+
 </html>

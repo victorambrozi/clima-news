@@ -1,5 +1,5 @@
 .main {
-    padding: 6.4rem 3.2rem;
+    padding: 6.4rem 3.2rem 6.4rem 6.4rem;
 
     background: #F3FBFF
 }
@@ -115,6 +115,8 @@
 
 .main-places-card-container {
     margin-top: 3.2rem;
+
+    display: flex;
 }
 
 .main-places-card {
@@ -126,9 +128,10 @@
 
 .main-places-card > figure {
     width: 100%;
-    height: 40px;
     max-width: 20rem;
-    border: 1px solid #000;
     border-radius: 10px;
+}
 
+.main-places-card > figure img {
+    object-fit: contain;
 }

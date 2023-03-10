@@ -1,35 +1,19 @@
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js";
+
+export function controlSwiper() {
+  return new Swiper(".swiper", {
+    // Optional parameter
+    direction: "horizontal",
     loop: true,
     centeredSlides: true,
-    slidesPerView: 'auto',
-    effect: 'coverflow',
+    slidesPerView: "auto",
+    effect: "coverflow",
     coverflowEffect: {
-        rotate: 20,
-        slideShadows: true,
-        // modifier: 1
-        // scale: 1
-        stretch: -20
-    },
-    // spaceBetween: '2',
-
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-        // type: 'progressbar'
-    },
-    // initialSlide: 1,
-    // Navigation arrows
-    // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
-    // },
-
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
-});
-
-
+      rotate: 20,
+      slideShadows: true,
+      // modifier: 1
+      // scale: 1
+      stretch: -20,
+    },   
+  });
+}

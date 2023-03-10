@@ -1,5 +1,6 @@
 import { fetchAPI } from "./weather.js";
 import { controlChart } from "./chart.js";
+import { controlSwiper } from "./swiper.js";
 
 const submit = document.querySelector("#submit");
 
@@ -13,4 +14,5 @@ const handleSubmit = async (event) => {
     controlChart(data.current);
 }
 
+controlSwiper()
 submit.addEventListener("click", handleSubmit);

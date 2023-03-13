@@ -6,14 +6,15 @@
 
 html {
     font-size: 62.10%;
+    height: 100vh;
 }
 
 body {
     width: 100%;
+
     display: flex;
     justify-content: center;
 
-    height: 100vh;
     font-family: 'Montserrat', sans-serif;
 }
 

@@ -136,3 +136,129 @@
     line-height: 30px;
     color: #312D63;
 }
+
+.main-forecast-days {
+    margin-top: 6.4rem;
+}
+
+.main-forecast-days-title {
+    margin-bottom: 3.2rem;
+
+    font-size: 1.6rem;
+    line-height: 26px;
+    font-weight: 700;
+
+    position: relative;
+    
+    color: #312D63;
+}
+
+.main-forecast-days-title::after {
+    content: '';
+
+    display: block;
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    left: 25px;
+
+    background: #312D63;
+    border-radius: 50%;
+}
+
+.main-forecast-data-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-grow: 1;
+}
+
+.main-forecast-data-item + .main-forecast-data-item {
+    margin-top: 1.6rem;
+}
+
+.main-forecast-data-item-dayweek {
+    font-size: 1.6rem;
+    line-height: 26px;
+    font-weight: 700;
+
+    color: #C2C1C6;
+}
+
+.main-forecast-data-item-chain-of-rain {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-forecast-data-item-chain-of-rain > i {
+    color: #4394ED;
+}
+
+.main-forecast-data-item-chain-of-rain > span {
+    font-size: 1.2rem;
+    line-height: 22px;
+    font-weight: 600;
+    color: #312D63;
+}
+
+.main-forecast-data-item-icon-situation-weather > i {
+    font-size: 2rem;
+    line-height: 30px;
+    color: #F7C500;
+}
+
+.main-forecast-data-item-chart-dayweek {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.2rem;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.main-forecast-data-item-chart-dayweek > span {
+    color: #312D63;
+}
+
+.main-forecast-data-item-chart-dayweek > #temp-min {
+    color: #C2C1C6;
+}
+
+.main-forecast-data-item-chart-temp {
+    margin: 0 3.2rem;
+    width: 300px;
+
+    height: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: relative;
+}
+
+.main-forecast-data-item-chart-temp::before {
+    content: '';
+    display: block;
+
+    width: 172px;   /* MUDAR WIDTH COM JS || AUMENTA E DIMINUI O TAMANHO DO GRÁFICO*/ 
+    height: 3px;
+
+    position: absolute;
+    left: 0;
+
+    background: #FF6F45;
+    border-radius: 10px;
+
+}
+
+.main-forecast-data-item-chart {
+    width: 100%;
+    border: 1px dotted #C2C1C6;
+    border-radius: 50%;
+}

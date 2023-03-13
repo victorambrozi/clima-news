@@ -1,4 +1,139 @@
+@import './chart.css';
+
 .header {
-    padding: 6.5rem;
-    border: 1px solid #00FF;
+    width: 100%;
+    padding: 6.4rem ;
+    background: #312D63;
+
+    color: azure;
+
+    position: relative;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content-places{
+    font-size: 1.6rem;
+    line-height: 26px;
+    font-weight: 700;
+}
+
+.header-avatar {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header-content-info {
+    width: 100%;
+    margin-top: 6.4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.header-content-info-top > i {
+    color: #4394ED;
+    font-size: 4.0rem;
+}
+
+.header-content-info-top-content__day {
+    font-size: 4.4rem;
+    line-height: 54px;
+    font-weight: 500;
+}
+
+.header-content-info-top-content__date {
+    font-size: 1.8rem;
+    line-height: 28px;
+}
+
+.header-content-info-center {
+    margin-top: 3.2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-content-info-center-temp {
+    font-size: 9.6rem;
+    line-height: 106px;
+    font-weight: 500;
+}
+
+.header-content-info-center-location {
+    margin-top: 0.8rem;
+    font-size: 2.4rem;
+    line-height: 34px;
+    font-weight: 400;
+}
+
+.header-content-info-center-data {
+    margin-top: 3.2rem;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    font-size: 1.6rem;
+    line-height: 26px;
+    font-weight: 500;
+
+    color: #F3FBFF;
+}
+
+.header-content-info-center-data> p:nth-child(1)::after {
+    content: '';
+    display: inline-block;
+    margin: 0 1.6rem;
+    width: 10px;
+    height: 10px;
+    background: #F3FBFF;
+
+    border-radius: 50%;
+}
+
+.header-content-info-bottom {
+    width: 100%;
+    margin-top: 6.4rem;
+
+    align-self: flex-start;
+    color: #F3FBFF;
+}
+
+.header-content-info-bottom-title {
+    margin-bottom: 3.2rem;
+    font-size: 2rem;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.header-content-info-bottom-chart-container {
+    position: relative;
+    width: 100%;
 }

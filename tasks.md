@@ -4,8 +4,8 @@
 - [x] ESCREVER HTML
     - [x] CRIAR GRÁFICO PARA TEMPERATURA MÁXIMA OU MÍNIMA
 - [] ESCREVER CSS
-    - [] MAIN -- Em andamento
-    - [] HEADER
+    - [x] MAIN
+    - [] HEADER - Em andamento
     - [x] ADICIONAR SWIPER JS
 - [] SUBSTITUIR CONTEÚDO ESTÁTICO
     - [] PREVISÃO DO DIA - LADO DIREITO

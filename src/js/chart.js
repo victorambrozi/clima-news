@@ -23,7 +23,7 @@ export const controlChart = ({ forecastHour }) => {
     ],
   }
 
-  new Chart(ctx, {
+  const config = {
     type: 'bar',
     data: data,
     options: {
@@ -41,17 +41,36 @@ export const controlChart = ({ forecastHour }) => {
           borderRadius: 20,
         }
       },
-      layout: {
-        padding: 20,
-      }
+      scales: {
+        y: {
+          beginAtZero: true,
+          min: 0,
+          max: 100,
+          grace: 5,
+          ticks: {
+            stepSize: 5,
+            color: '#FFF'
+          }
+        },
+        x: {
+          ticks: {
+            beginAtZero: true,
+            color: '#FFF'
+          }
+        }
+      },
+      responsive: true,
+      maintainAspectRatio: true
     },
     plugins: {
       legend: {
         labels: {
           textAlign: 'right',
-          useBorderRadius: true
+          fontColor: '#FFF'
         }
       }
     }
-  });
+  }
+
+  new Chart(ctx, config);
 }

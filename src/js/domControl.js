@@ -5,7 +5,7 @@ import { controlSwiper } from "./swiper.js";
 const submit = document.querySelector("#submit");
 
 
-const handleSubmit = async (event) => {
+const handleClick = async (event) => {
     const city = document.querySelector("#search").value;
     event.preventDefault();
 
@@ -14,5 +14,5 @@ const handleSubmit = async (event) => {
     controlChart(data.current);
 }
 
-controlSwiper()
-submit.addEventListener("click", handleSubmit);
+controlSwiper();
+submit.addEventListener("click", handleClick);

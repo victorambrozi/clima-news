@@ -4,7 +4,7 @@
     width: 40%;
     padding: 6.4rem;
     background-color: #312D63;
-    background-image: url("../../assets/bg-forecast.svg");
+    background-image: url("../../src/assets/bg-forecast.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: 22%;

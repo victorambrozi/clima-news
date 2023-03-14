@@ -1,11 +1,15 @@
 @import './chart.css';
 
 .header {
-    width: 100%;
-    padding: 6.4rem ;
-    background: #312D63;
+    width: 40%;
+    padding: 6.4rem;
+    background-color: #312D63;
+    background-image: url("../../assets/bg-forecast.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 22%;
 
-    color: azure;
+    color: #F3FBFF;
 
     position: relative;
 }
@@ -14,6 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .header-content-top {
@@ -39,7 +44,7 @@
 
 .header-content-info {
     width: 100%;
-    margin-top: 6.4rem;
+    margin-top: 12.8rem;
 
     display: flex;
     flex-direction: column;
@@ -81,7 +86,7 @@
 .header-content-info-center-temp {
     font-size: 9.6rem;
     line-height: 106px;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .header-content-info-center-location {

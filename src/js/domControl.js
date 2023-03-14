@@ -8,7 +8,7 @@ const handleClick = async (event) => {
   const city = document.querySelector("#search").value;
   const data = await fetchAPI(city);
   const daywWeek = new Date(await data.current.date).getUTCDate();
-  const dayDate = new Date(await data.current.date)
+  const dayDate = new Date(await data.current.date);
   event.preventDefault();
 
   // ambiente
@@ -26,76 +26,82 @@ const handleClick = async (event) => {
   );
 
   const getDayForecast = (date) => {
-      let day = '';
+    let day = '';
+    
+    switch (date.getUTCDay()) {
+      case 0:
+        day = "Domingo";
+        break;
+      case 1:
+        day = "Segunda";
+        break;
+      case 2:
+        day = "Terça";
+        break;
+      case 3:
+        day = "Quarta";
+        break;
+      case 4:
+        day = "Quinta";
+        break;
+      case 5:
+        day = "Sexta";
+        break;
+      case 6:
+        day = "Sábado";
+        break;
+    }
+    console.log(date.getUTCDay())
 
-      switch (date.getUTCDay()) {
-        case 1:
-          day = "Segunda";
-          break;
-        case 2:
-          day = "Terça";
-          break;
-        case 3:
-          day = "Quarta";
-          break;
-        case 4:
-          day = "Quinta";
-          break;
-        case 5:
-          day = "Sexta";
-          break;
-        case 6:
-          day = "Sábado";
-          break;
-        case 7:
-          day = "Domingo";
-          break;
-        default:
-            day = "Hoje";
-      }
-
-      return day;
+    return day;
   }
 
   iconElement.src = data.current.icon;
-  dateElement.textContent = `${getDayForecast(dayDate).slice(0,3)}, ${daywWeek}`;
+  dateElement.textContent = `${getDayForecast(dayDate).slice(0, 3)}, ${daywWeek}`;
   tempElement.textContent = `${data.current.temp}°C`;
   locationElement.textContent = `${data.current.location.name}`
   tempMaxElement.textContent = `${Math.trunc(data.current.tempMax)}°C`;
   sunsetElement.textContent = `${data.current.sunset}`;
   controlChart(data.current);
-//   FINAL HEADER
+  //   FINAL HEADER
 
-// INIT MAIN
- const forecastdayElement = data.forecastday.reduce((html, forecastday) => {
-  console.log(forecastday);
-    return html += `<li class="main-forecast-data-item">
-    <span class="main-forecast-data-item-dayweek">${forecastday.day}</span>
-    <div class="main-forecast-data-item-chain-of-rain">
-      <i class="fa-solid fa-droplet"></i>
-      
-      <span>54%</span>
-    </div>
-    
-    <div class="main-forecast-data-item-icon-situation-weather">
-      <i class="fa-solid fa-sun"></i>
-    </div>
+  // INIT MAIN
+  const forecastdayContainer = document.querySelector('[data-forecastday="container"]');
+  const dataFoercastday = await data.forecastday.reduce((html, forecastday) => {
 
-    <div class="main-forecast-data-item-chart-dayweek">
-      <span id="temp-min">22°C</span> <!-- min-->
-      <div class="main-forecast-data-item-chart-temp">
-        <div class="main-forecast-data-item-chart">
-          <span class="main-forcast-data-item-chart-progress"></span>
-        </div>
-        <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
+    const day = new Date(forecastday.date);
+    const chaceOfRain = forecastday.day.daily_chance_of_rain;
+    const iconForecastday = forecastday.day.condition.icon;
+    const altIconForecastday = forecastday.day.condition.text;
+    const tempMin = forecastday.day.mintemp_c;
+    const tempMax = forecastday.day.maxtemp_c;
+
+    return html += ` 
+    <li class="main-forecast-data-item">
+      <span class="main-forecast-data-item-dayweek">${getDayForecast(day)}</span>
+      <div class="main-forecast-data-item-chain-of-rain">
+        <i class="fa-solid fa-droplet"></i>
+        
+        <span>${chaceOfRain}%</span>
       </div>
-      <span id="temp-max">40°C</span><!-- max-->
-    </div>
-  </li>`
-})
-// console.log(date)
+  
+      <div class="main-forecast-data-item-icon-situation-weather">
+          <img src="${iconForecastday}" alt="${altIconForecastday}">
+      </div>
 
-// document.querySelector(".main-forecast-data-container").appendChild(forecastdayElement)
+      <div class="main-forecast-data-item-chart-dayweek">
+        <span id="temp-min">${Math.trunc(tempMin)}°C</span> <!-- min-->
+        <div class="main-forecast-data-item-chart-temp">
+          <div class="main-forecast-data-item-chart">
+            <span class="main-forcast-data-item-chart-progress"></span>
+          </div>
+        </div>
+        <span id="temp-max">${Math.trunc(tempMax)}°C</span><!-- max-->
+      </div>
+</li>`;
+  }, '');
+  // console.log(forecastdayContainer)
+  forecastdayContainer.outerHTML = dataFoercastday;
 };
 
 controlSwiper();

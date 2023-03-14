@@ -114,27 +114,27 @@
 }
 
 .main-places-card {
+    padding: 0 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.main-places-card > figure {
-    width: 100%;
-}
-
-.main-places-card > figure img {
-    object-fit: contain;
-}
-
-.main-places-card > p {
+.main-places-card-location {
     margin: 1.6rem ;
 
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 30px;
     color: #312D63;
+}
+
+.main-places-card-forecast {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .main-forecast-days {
@@ -205,10 +205,9 @@
     color: #312D63;
 }
 
-.main-forecast-data-item-icon-situation-weather > i {
-    font-size: 2rem;
-    line-height: 30px;
-    color: #F7C500;
+.main-forecast-data-item-icon-situation-weather > img {
+    width: 40px;
+    height: 40px;
 }
 
 .main-forecast-data-item-chart-dayweek {
@@ -231,8 +230,8 @@
 
 .main-forecast-data-item-chart-temp {
     margin: 0 3.2rem;
+    
     width: 300px;
-
     height: 10px;
 
     display: flex;
@@ -246,7 +245,7 @@
     content: '';
     display: block;
 
-    width: 172px;   /* MUDAR WIDTH COM JS || AUMENTA E DIMINUI O TAMANHO DO GRÁFICO*/ 
+    width: 20px;   /* MUDAR WIDTH COM JS || AUMENTA E DIMINUI O TAMANHO DO GRÁFICO*/ 
     height: 3px;
 
     position: absolute;

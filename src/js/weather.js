@@ -53,6 +53,6 @@ export const fetchAPI = async (city) => {
 
   // salvar no localStorage
   localStorage.setItem("dataWeather", JSON.stringify(dataWeather));
-
+  console.log(new Date(dataWeather.current.date).getUTCDate())
   return dataWeather;
 };

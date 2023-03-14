@@ -7,7 +7,8 @@ const btnSearch = document.querySelector("#btn-search");
 const handleClick = async (event) => {
   const city = document.querySelector("#search").value;
   const data = await fetchAPI(city);
-  const date = new Date(await data.current.date);
+  const daywWeek = new Date(await data.current.date).getUTCDate();
+  const dayDate = new Date(await data.current.date)
   event.preventDefault();
 
   // ambiente
@@ -27,7 +28,7 @@ const handleClick = async (event) => {
   const getDayForecast = (date) => {
       let day = '';
 
-      switch (date.getDay()) {
+      switch (date.getUTCDay()) {
         case 1:
           day = "Segunda";
           break;
@@ -57,9 +58,9 @@ const handleClick = async (event) => {
   }
 
   iconElement.src = data.current.icon;
-  dateElement.textContent = `${getDayForecast(date).slice(0,3)}, ${date.getDay()}`;
+  dateElement.textContent = `${getDayForecast(dayDate).slice(0,3)}, ${daywWeek}`;
   tempElement.textContent = `${data.current.temp}°C`;
-  locationElement.textContent = `${data.current.location.name}, ${data.current.location.region}`
+  locationElement.textContent = `${data.current.location.name}`
   tempMaxElement.textContent = `${Math.trunc(data.current.tempMax)}°C`;
   sunsetElement.textContent = `${data.current.sunset}`;
   controlChart(data.current);
@@ -92,7 +93,7 @@ const handleClick = async (event) => {
     </div>
   </li>`
 })
-console.log(forecastdayElement)
+// console.log(date)
 
 // document.querySelector(".main-forecast-data-container").appendChild(forecastdayElement)
 };

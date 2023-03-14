@@ -40,21 +40,23 @@
 
       <div class="header-content-info">
         <div class="header-content-info-top">
-          <i class="fa-solid fa-cloud-rain"></i>
+          <figure>
+            <img src="" alt="Icon" data-forecast-current="icon">
+          </figure>
 
           <div class="header-content-info-top-content">
             <h2 class="header-content-info-top-content__day">Hoje</h2>
-            <p class="header-content-info-top-content__date">Sab, <span>14 Fev</span></p>
+            <p class="header-content-info-top-content__date" data-forecast-current="date"></p>
           </div>
         </div>
 
         <div class="header-content-info-center">
-          <p class="header-content-info-center-temp" id="curent-temp">28°C</p>
-          <span class="header-content-info-center-location">Salvador, BA</span>
+          <p class="header-content-info-center-temp" data-forecast-current="temp"></p>
+          <span class="header-content-info-center-location" data-forecast-current="location"></span>
 
           <div class="header-content-info-center-data">
-            <p>Temperatura esperada - <span>32°C</span></p>
-            <p>Pôr do sol- <span>17:42h</span></p>
+            <p>Temperatura esperada - <span data-forecast-current="temp-max"></span></p>
+            <p>Pôr do sol - <span data-forecast-current="sunset"></span></p>
           </div>
         </div>
 
@@ -76,7 +78,7 @@
         <div class="main-search-container">
           <label for="search" name="search">Pesquisa</label>
           <input type="text" name="search" id="search" placeholder="Procurar cidades..." required />
-          <button type="submit" name="submit" id="submit">
+          <button type="button" name="btn-search" id="btn-search">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
@@ -208,152 +210,6 @@
             <span id="temp-max">40°C</span><!-- max-->
           </div>
         </li>
-
-        <li class="main-forecast-data-item">
-          <span class="main-forecast-data-item-dayweek">Segunda</span>
-          <div class="main-forecast-data-item-chain-of-rain">
-            <i class="fa-solid fa-droplet"></i>
-            
-            <span>54%</span>
-          </div>
-          
-          <div class="main-forecast-data-item-icon-situation-weather">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-
-          <div class="main-forecast-data-item-chart-dayweek">
-            <span id="temp-min">22°C</span> <!-- min-->
-            <div class="main-forecast-data-item-chart-temp">
-              <div class="main-forecast-data-item-chart">
-                <span class="main-forcast-data-item-chart-progress"></span>
-              </div>
-              <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
-            </div>
-            <span id="temp-max">40°C</span><!-- max-->
-          </div>
-        </li>
-
-        <li class="main-forecast-data-item">
-          <span class="main-forecast-data-item-dayweek">Segunda</span>
-          <div class="main-forecast-data-item-chain-of-rain">
-            <i class="fa-solid fa-droplet"></i>
-            
-            <span>54%</span>
-          </div>
-          
-          <div class="main-forecast-data-item-icon-situation-weather">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-
-          <div class="main-forecast-data-item-chart-dayweek">
-            <span id="temp-min">22°C</span> <!-- min-->
-            <div class="main-forecast-data-item-chart-temp">
-              <div class="main-forecast-data-item-chart">
-                <span class="main-forcast-data-item-chart-progress"></span>
-              </div>
-              <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
-            </div>
-            <span id="temp-max">40°C</span><!-- max-->
-          </div>
-        </li>
-
-        <li class="main-forecast-data-item">
-          <span class="main-forecast-data-item-dayweek">Segunda</span>
-          <div class="main-forecast-data-item-chain-of-rain">
-            <i class="fa-solid fa-droplet"></i>
-            
-            <span>54%</span>
-          </div>
-          
-          <div class="main-forecast-data-item-icon-situation-weather">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-
-          <div class="main-forecast-data-item-chart-dayweek">
-            <span id="temp-min">22°C</span> <!-- min-->
-            <div class="main-forecast-data-item-chart-temp">
-              <div class="main-forecast-data-item-chart">
-                <span class="main-forcast-data-item-chart-progress"></span>
-              </div>
-              <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
-            </div>
-            <span id="temp-max">40°C</span><!-- max-->
-          </div>
-        </li>
-
-        <li class="main-forecast-data-item">
-          <span class="main-forecast-data-item-dayweek">Segunda</span>
-          <div class="main-forecast-data-item-chain-of-rain">
-            <i class="fa-solid fa-droplet"></i>
-            
-            <span>54%</span>
-          </div>
-          
-          <div class="main-forecast-data-item-icon-situation-weather">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-
-          <div class="main-forecast-data-item-chart-dayweek">
-            <span id="temp-min">22°C</span> <!-- min-->
-            <div class="main-forecast-data-item-chart-temp">
-              <div class="main-forecast-data-item-chart">
-                <span class="main-forcast-data-item-chart-progress"></span>
-              </div>
-              <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
-            </div>
-            <span id="temp-max">40°C</span><!-- max-->
-          </div>
-        </li>
-
-        <li class="main-forecast-data-item">
-          <span class="main-forecast-data-item-dayweek">Segunda</span>
-          <div class="main-forecast-data-item-chain-of-rain">
-            <i class="fa-solid fa-droplet"></i>
-            
-            <span>54%</span>
-          </div>
-          
-          <div class="main-forecast-data-item-icon-situation-weather">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-
-          <div class="main-forecast-data-item-chart-dayweek">
-            <span id="temp-min">22°C</span> <!-- min-->
-            <div class="main-forecast-data-item-chart-temp">
-              <div class="main-forecast-data-item-chart">
-                <span class="main-forcast-data-item-chart-progress"></span>
-              </div>
-              <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
-            </div>
-            <span id="temp-max">40°C</span><!-- max-->
-          </div>
-        </li>
-
-        <li class="main-forecast-data-item">
-          <span class="main-forecast-data-item-dayweek">Segunda</span>
-          <div class="main-forecast-data-item-chain-of-rain">
-            <i class="fa-solid fa-droplet"></i>
-            
-            <span>54%</span>
-          </div>
-          
-          <div class="main-forecast-data-item-icon-situation-weather">
-            <i class="fa-solid fa-sun"></i>
-          </div>
-
-          <div class="main-forecast-data-item-chart-dayweek">
-            <span id="temp-min">22°C</span> <!-- min-->
-            <div class="main-forecast-data-item-chart-temp">
-              <div class="main-forecast-data-item-chart">
-                <span class="main-forcast-data-item-chart-progress"></span>
-              </div>
-              <!-- DESCOBRIR COMO FAZ O GRÁFICO PARA OS DOIS LADOS || ------|=====---- || -->
-            </div>
-            <span id="temp-max">40°C</span><!-- max-->
-          </div>
-        </li>
-
-
       </ul>
     </section>
     

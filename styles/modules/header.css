@@ -1,5 +1,3 @@
-@import './chart.css';
-
 .header {
     width: 40%;
     padding: 6.4rem;
@@ -59,9 +57,9 @@
     gap: 0.8rem;
 }
 
-.header-content-info-top > i {
-    color: #4394ED;
-    font-size: 4.0rem;
+.header-content-info-top > figure > img {
+    width: 60px;
+    height: 60px;
 }
 
 .header-content-info-top-content__day {
@@ -73,6 +71,8 @@
 .header-content-info-top-content__date {
     font-size: 1.8rem;
     line-height: 28px;
+
+    text-align: center;
 }
 
 .header-content-info-center {

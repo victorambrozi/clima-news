@@ -1,6 +1,7 @@
 import { fetchAPI } from "./weather.js";
 import { controlChart } from "./chart.js";
 import { controlSwiper } from "./swiper.js";
+import { fetchAPICities } from "./weather.js";
 
 const btnSearch = document.querySelector("#btn-search");
 
@@ -100,6 +101,32 @@ const handleClick = async (event) => {
   }, '');
   forecastdayContainer.outerHTML = dataFoercastday;
 };
+const handleLoad = async () => {
+  const dataCities = await fetchAPICities();
+  const swiper = document.querySelector(".swiper");
+  const swiperWrapper = document.createElement('div');
+  divElement.classList.add("swiper-wrapper")
 
+  const htmlElement = dataCities.reduce((html, dataCity) => {
+    return html+= 
+    `
+      <div class="swiper-slide">
+        <div class="main-places-card">
+          <p class="main-places-card-location">${dataCity.location.name}</p>
+          <div class="main-places-card-forecast">
+            <span class="main-places-card-forecast__icon">
+              <img src="${dataCity.current.condition.icon}" alt="${dataCity.current.condition.text}">
+            </span>
+            <span class="main-places-card-forecast__temp">${dataCity.current.temp_c}°C</span>
+          </div>
+        </div>
+      </div>
+    `
+  }, "");
+
+  swiperWrapper.innerHTML = htmlElement;
+  console.log(swiperWrapper)
+}
 controlSwiper();
 btnSearch.addEventListener("click", handleClick);
+window.addEventListener("load", handleLoad);

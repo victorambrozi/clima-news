@@ -1,8 +1,7 @@
 const API_KEY = "9f916719091d4adbb1c234509230703";
 
 export const fetchAPI = async (city) => {
-  const baseURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city === null ? "Salvador" : city
-    }&days=7&aqi=no&alerts=no&lang=pt_br`;
+  const baseURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&aqi=no&alerts=no&lang=pt`;
   const response = await fetch(baseURL);
   const data = await response.json();
 
@@ -36,11 +35,25 @@ export const fetchAPI = async (city) => {
       forecastHour,
     },
     forecastday: data.forecast.forecastday
-    
+
+  };
+
+  // salvar no localStorage
+  localStorage.setItem("dataWeather", JSON.stringify(dataWeather));
+  console.log(data)
+  return dataWeather;
 };
 
-// salvar no localStorage
-localStorage.setItem("dataWeather", JSON.stringify(dataWeather));
-console.log(data)
-return dataWeather;
-};
+export const fetchAPICities = async () => {
+  const cities = ['Aracaju', 'Belem',  'Brasilia',  'Cuiaba', 'Curitiba', 'Florianopolis', 'Fortaleza', 'Goiania', 'Macapa', 'Maceio', 'Manaus', 'Natal', 'Palmas']
+
+  const promise = await Promise.all(cities
+    .map(async (city) => {
+      const baseURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&aqi=no&alerts=no&lang=pt`;
+      const response = await fetch(baseURL);
+      const respJSON = await response.json();
+      return respJSON;
+    }))
+
+    return promise;
+}

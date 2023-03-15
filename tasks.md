@@ -3,15 +3,15 @@
     - [x] weather API
 - [x] ESCREVER HTML
     - [x] CRIAR GRÁFICO PARA TEMPERATURA MÁXIMA OU MÍNIMA
-- [] ESCREVER CSS
+- [x] ESCREVER CSS
     - [x] MAIN
     - [x] HEADER
     - [x] ADICIONAR SWIPER JS
 - [] SUBSTITUIR CONTEÚDO ESTÁTICO
     - [x] PREVISÃO DO DIA
-    - [x] PREVISÃO DOS DIAS DA SEMANA - Em andamento
+    - [x] PREVISÃO DOS DIAS DA SEMANA
         - [x] REFAZER GRÁFICO DA TEMPERATURA MÁXIMA E MÍNIM
-    - [] PREVISÃO DO TEMPO - CARDS  
+    - [] PREVISÃO DO TEMPO - CARDS  - Em andamento
     - [] CARREGAR DADOS QUANDO A PÁGINA INICIAR
 - [] RESPONSIVIDADE
 ### Funcionalidades

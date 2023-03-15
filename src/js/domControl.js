@@ -51,8 +51,6 @@ const handleClick = async (event) => {
         day = "Sábado";
         break;
     }
-    console.log(date.getUTCDay())
-
     return day;
   }
 
@@ -76,12 +74,12 @@ const handleClick = async (event) => {
     const tempMin = forecastday.day.mintemp_c;
     const tempMax = forecastday.day.maxtemp_c;
 
+
     return html += ` 
     <li class="main-forecast-data-item">
       <span class="main-forecast-data-item-dayweek">${getDayForecast(day)}</span>
       <div class="main-forecast-data-item-chain-of-rain">
         <i class="fa-solid fa-droplet"></i>
-        
         <span>${chaceOfRain}%</span>
       </div>
   
@@ -90,17 +88,16 @@ const handleClick = async (event) => {
       </div>
 
       <div class="main-forecast-data-item-chart-dayweek">
-        <span id="temp-min">${Math.trunc(tempMin)}°C</span> <!-- min-->
+        <span id="temp-min">${Math.trunc(tempMin)}°C</span>
         <div class="main-forecast-data-item-chart-temp">
           <div class="main-forecast-data-item-chart">
-            <span class="main-forcast-data-item-chart-progress"></span>
+            <span class="main-forcast-data-item-chart-progress" style="width: ${forecastday.day.avgtemp_c}%"></span>
           </div>
         </div>
-        <span id="temp-max">${Math.trunc(tempMax)}°C</span><!-- max-->
+        <span id="temp-max">${Math.trunc(tempMax)}°C</span>
       </div>
-</li>`;
+    </li>`;
   }, '');
-  // console.log(forecastdayContainer)
   forecastdayContainer.outerHTML = dataFoercastday;
 };
 

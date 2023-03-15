@@ -241,23 +241,22 @@
     position: relative;
 }
 
-.main-forecast-data-item-chart-temp::before {
-    content: '';
-    display: block;
-
-    width: 20px;   /* MUDAR WIDTH COM JS || AUMENTA E DIMINUI O TAMANHO DO GRÁFICO*/ 
-    height: 3px;
-
-    position: absolute;
-    left: 0;
-
-    background: #FF6F45;
-    border-radius: 10px;
-
-}
-
 .main-forecast-data-item-chart {
     width: 100%;
     border: 1px dotted #C2C1C6;
     border-radius: 50%;
+
+    position: relative;
+}
+
+.main-forcast-data-item-chart-progress {
+    width: 40%;
+    height: 3px;
+
+    position: absolute;
+    top: -2px;
+    left: 0;
+
+    background: #FF6F45;
+    border-radius: 10px;
 }

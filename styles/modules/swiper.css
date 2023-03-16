@@ -1,7 +1,6 @@
 .swiper {
     width: 100%;
     padding: 50px 0;
-    margin-left: 0 !important;
 }
 
 .swiper-wrapper {
@@ -9,7 +8,7 @@
 }
 
 .swiper-slide {
-  width: 100%;
+  width: fit-content;
   max-width: 200px;
   cursor: pointer;
 

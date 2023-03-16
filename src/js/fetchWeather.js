@@ -40,19 +40,22 @@ export const fetchAPI = async (city) => {
 
   // salvar no localStorage
   localStorage.setItem("dataWeather", JSON.stringify(dataWeather));
-  console.log(data)
   return dataWeather;
 };
 
 export const fetchAPICities = async () => {
-  const cities = ['Aracaju', 'Belem',  'Brasilia',  'Cuiaba', 'Curitiba', 'Florianopolis', 'Fortaleza', 'Goiania', 'Macapa', 'Maceio', 'Manaus', 'Natal', 'Palmas']
+  const cities = ['Aracaju', 'Teresina',  'Salvador', 'Natal', 'Recife', 'Fortaleza', 'Goiania']
 
   const promise = await Promise.all(cities
     .map(async (city) => {
       const baseURL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7&aqi=no&alerts=no&lang=pt`;
+    try {
       const response = await fetch(baseURL);
       const respJSON = await response.json();
       return respJSON;
+    } catch (err) {
+      new Error(err);
+    }
     }))
 
     return promise;

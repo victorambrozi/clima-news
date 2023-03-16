@@ -1,7 +1,7 @@
-import { fetchAPI } from "./weather.js";
+import { fetchAPI } from "./fetchWeather.js";
 import { controlChart } from "./chart.js";
 import { controlSwiper } from "./swiper.js";
-import { fetchAPICities } from "./weather.js";
+import { fetchAPICities } from "./fetchWeather.js";
 
 const btnSearch = document.querySelector("#btn-search");
 
@@ -28,7 +28,7 @@ const handleClick = async (event) => {
 
   const getDayForecast = (date) => {
     let day = '';
-    
+
     switch (date.getUTCDay()) {
       case 0:
         day = "Domingo";
@@ -101,32 +101,30 @@ const handleClick = async (event) => {
   }, '');
   forecastdayContainer.outerHTML = dataFoercastday;
 };
+
 const handleLoad = async () => {
   const dataCities = await fetchAPICities();
-  const swiper = document.querySelector(".swiper");
-  const swiperWrapper = document.createElement('div');
-  divElement.classList.add("swiper-wrapper")
+  const iconCard = dataCities.map(data => data.current.condition.icon)
+  const citiesName = dataCities.map(data => data.location.name);
+  const citiesTemp = dataCities.map(data => data.current.temp_c);
 
-  const htmlElement = dataCities.reduce((html, dataCity) => {
-    return html+= 
-    `
-      <div class="swiper-slide">
-        <div class="main-places-card">
-          <p class="main-places-card-location">${dataCity.location.name}</p>
-          <div class="main-places-card-forecast">
-            <span class="main-places-card-forecast__icon">
-              <img src="${dataCity.current.condition.icon}" alt="${dataCity.current.condition.text}">
-            </span>
-            <span class="main-places-card-forecast__temp">${dataCity.current.temp_c}°C</span>
-          </div>
-        </div>
-      </div>
-    `
-  }, "");
+  citiesName.forEach((city, index) => {
+    const cardTitle = document.querySelectorAll('[data-card="title"]');
+    cardTitle[index].textContent = city;
+  })
 
-  swiperWrapper.innerHTML = htmlElement;
-  console.log(swiperWrapper)
+  iconCard.forEach((icon, index) => {
+    const iconElement = document.querySelectorAll('[data-card="icon"]');
+   iconElement[index].src = icon; 
+  })
+
+  citiesTemp.forEach((temp, index) => {
+    const tempCity = document.querySelectorAll('[data-card="temp"]');
+    tempCity[index].textContent = `${Math.trunc(temp)}°C`; 
+  })
+
+  await controlSwiper();
 }
-controlSwiper();
+
 btnSearch.addEventListener("click", handleClick);
 window.addEventListener("load", handleLoad);

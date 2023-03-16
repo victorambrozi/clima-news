@@ -113,6 +113,10 @@
     font-weight: 900;
 }
 
+.main-places-card-container {
+    width: 100%;
+}
+
 .main-places-card {
     padding: 0 1.6rem;
     display: flex;
@@ -135,6 +139,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.main-places-card-forecast__temp {
+    font-size: 1.4rem;
+    line-height: 24px;
+    font-weight: 600;
+    color: #312D63;
 }
 
 .main-forecast-days {

@@ -4,13 +4,11 @@ export function controlSwiper() {
   return new Swiper(".swiper", {
     // Optional parameter
     direction: "horizontal",
-    autoHeight: true,
     loop: true,
     centeredSlides: true,
     slidesPerView: 'auto',
     effect: "coverflow",
     spaceBetween: 20,
-
     // Modules
     pagination: {
       el: '.swiper-pagination',

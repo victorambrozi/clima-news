@@ -83,9 +83,9 @@ const handleClick = async (event) => {
 
     return (html += ` 
     <li class="main-forecast-data-item">
-      <span class="main-forecast-data-item-dayweek">${getDayForecast(
-        day
-      )}</span>
+      <span class="main-forecast-data-item-dayweek">
+        ${getDayForecast(day)}
+      </span>
       <div class="main-forecast-data-item-chain-of-rain">
         <i class="fa-solid fa-droplet"></i>
         <span>${chaceOfRain}%</span>
@@ -137,7 +137,6 @@ async function loadContentCard() {
 
 async function loadForecastday() {
   const { forecastday, current } = JSON.parse(localStorage.getItem("dataWeather"));
-  console.log(current)
   if (forecastday) {
     // CAPTURA DADOS DO LOCAL STORAGE
     const content = forecastday.reduce((html, data) => {
@@ -178,7 +177,6 @@ async function loadForecastday() {
     const date = new Date(current.date).getUTCDay();
     const daywWeek = new Date(await current.date).getUTCDate();
 
-    console.log(date)
     iconElement.src = current.icon;
     dateElement.textContent = `${getDayForecast(date).slice(
       0,

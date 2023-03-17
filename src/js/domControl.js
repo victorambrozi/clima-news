@@ -59,8 +59,6 @@ const handleClick = async (event) => {
   const dayDate = new Date(await data.current.date).getUTCDay();
   event.preventDefault();
 
-  
-
 
   iconElement.src = data.current.icon;
   dateElement.textContent = `${getDayForecast(dayDate).slice(
@@ -139,12 +137,11 @@ async function loadContentCard() {
 
 async function loadForecastday() {
   const { forecastday, current } = JSON.parse(localStorage.getItem("dataWeather"));
-
+  console.log(current)
   if (forecastday) {
     // CAPTURA DADOS DO LOCAL STORAGE
     const content = forecastday.reduce((html, data) => {
       const day = new Date(data.date).getUTCDay();
-      console.log(day)
 
       return (html += `
       <li class="main-forecast-data-item">
@@ -172,13 +169,28 @@ async function loadForecastday() {
       </div>
     </li>`);
     }, "");
-    return forecastdayContainer.outerHTML = content;
+    forecastdayContainer.outerHTML = content;
   } else {
     // LOCALIZO A CIDADE DO USUÁRIO PELO BROWSER, FAÇO A REQUISIÇÃO E RENDERIZO NA TELA
   }
 
   if(current) {
+    const date = new Date(current.date).getUTCDay();
+    const daywWeek = new Date(await current.date).getUTCDate();
 
+    console.log(date)
+    iconElement.src = current.icon;
+    dateElement.textContent = `${getDayForecast(date).slice(
+      0,
+      3
+    )}, ${daywWeek}`;
+    tempElement.textContent = `${current.temp}°C`;
+    locationElement.textContent = `${current.location.name}`;
+    tempMaxElement.textContent = `${Math.trunc(current.tempMax)}°C`;
+    sunsetElement.textContent = `${current.sunset}`;
+    controlChart(current);
+  } else {
+    // LOCALIZO A CIDADE DO USUÁRIO PELO BROWSER, FAÇO A REQUISIÇÃO E RENDERIZO NA TELA
   }
 }
 

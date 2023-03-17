@@ -11,7 +11,7 @@
     - [x] PREVISÃO DO DIA
     - [x] PREVISÃO DOS DIAS DA SEMANA
         - [x] REFAZER GRÁFICO DA TEMPERATURA MÁXIMA E MÍNIM
-    - [] PREVISÃO DO TEMPO - CARDS  - Em andamento
+    - [x] PREVISÃO DO TEMPO - CARDS
     - [] CARREGAR DADOS QUANDO A PÁGINA INICIAR
 - [] RESPONSIVIDADE
 ### Funcionalidades
